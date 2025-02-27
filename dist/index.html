@@ -91,6 +91,19 @@
         </div>
 
         <div>
+          <h6>Creatable & Multiple</h6>
+          <select class="form-select" id="example-creatable-multiple" multiple>
+            <option value="">Choose or add browser</option>
+            <option value="chrome">Chrome</option>
+            <option value="firefox">Firefox</option>
+            <option value="safari">Safari</option>
+            <option value="edge">Edge</option>
+            <option value="opera">Opera</option>
+            <option value="brave">Brave</option>
+          </select>
+        </div>
+
+        <div>
           <h6>Clearable</h6>
           <select class="form-select" id="example-clearable">
             <option value="">Choose browser</option>
@@ -190,6 +203,12 @@
 
     // creatable
     dselect(document.querySelector('#example-creatable'), {
+      search: true,
+      creatable: true
+    })
+
+    // creatable & multiple
+    dselect(document.querySelector('#example-creatable-multiple'), {
       search: true,
       creatable: true
     })

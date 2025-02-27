@@ -38,11 +38,18 @@ function dselectSearch(event, input, classElement, classToggler, creatable) {
 
   headers.forEach(i => i.classList.add('d-none'))
 
-  for (const item of items) {
-    const filterText = item.textContent
+  let hasExactMatch = false
 
-    if (filterText.toLowerCase().indexOf(filterValue) > -1) {
+  items.forEach(item => {
+    const filterText = item.textContent.toLowerCase()
+
+    if (filterText.indexOf(filterValue) > -1) {
       item.classList.remove('d-none')
+
+      if (filterText === filterValue) {
+        hasExactMatch = true
+      }
+
       let header = item
       while(header = header.previousElementSibling) {
         if (header.classList.contains('dropdown-header')) {
@@ -53,27 +60,28 @@ function dselectSearch(event, input, classElement, classToggler, creatable) {
     } else {
       item.classList.add('d-none')
     }
-  }
+  })
+
   const found = Array.from(items).filter(i => !i.classList.contains('d-none') && !i.hasAttribute('hidden'))
-  if (found.length < 1) {
+
+  // Conditionally show the noResults message and allow adding new values
+  if (creatable && !hasExactMatch && filterValue.length >= 3) {
     noResults.classList.remove('d-none')
-    itemsContainer.classList.add('d-none')
-    if (creatable) {
-      noResults.innerHTML = `Press Enter to add "<strong>${input.value}</strong>"`
-      if (event.key === 'Enter') {
-        const target = input.closest(`.${classElement}`).previousElementSibling
-        const toggler = target.nextElementSibling.getElementsByClassName(classToggler)[0]
-        target.insertAdjacentHTML('afterbegin', `<option value="${input.value}" selected>${input.value}</option>`)
-        target.dispatchEvent(new Event('change'))
-        input.value = ''
-        input.dispatchEvent(new Event('keyup'))
-        toggler.click()
-        toggler.focus()
-      }
+    noResults.innerHTML = `Press Enter to add "<strong>${input.value}</strong>"`
+
+    if (event.key === 'Enter') {
+      const target = input.closest(`.${classElement}`).previousElementSibling
+      const toggler = target.nextElementSibling.getElementsByClassName(classToggler)[0]
+      target.insertAdjacentHTML('afterbegin', `<option value="${input.value}" selected>${input.value}</option>`)
+      target.dispatchEvent(new Event('change'))
+      input.value = ''
+      input.dispatchEvent(new Event('keyup'))
+      toggler.click()
+      toggler.focus()
+      itemsContainer.classList.remove('d-none')
     }
   } else {
     noResults.classList.add('d-none')
-    itemsContainer.classList.remove('d-none')
   }
 }
 function dselectClear(button, classElement) {
