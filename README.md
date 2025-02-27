@@ -1,7 +1,7 @@
 # dselect Fork
 
 Dropdown select box for bootstrap 5 - A customizable dropdown select box built for Bootstrap 5, enhanced with additional flexibility for the `Creatable` feature.
-This repository is a fork of the original dselect project.
+This repository is a fork of the original [dselect](https://github.com/jarstone/dselect) project.
 
 ## Overview
 
@@ -79,7 +79,9 @@ Options can also be set directly in the HTML using `data-dselect-*` attributes:
 
 ## Changes and Improvements
 
-This fork introduces enhancements to the dropdown functionality, including improved search and creation capabilities. Previously, the dropdown restricted adding new entries if they started with existing item letters, causing limitations for users. The updated logic now allows for any new values to be added unless they exactly match an existing entry and have at least three letters, thereby expanding on the original functionality. These improvements ensure a more flexible and user-friendly experience.
+This fork introduces enhancements to the dropdown functionality, including improved search and creation capabilities. Previously, the dropdown restricted adding new entries if they started with existing item letters, causing limitations for users. The updated logic now allows for any new values to be added unless they exactly match an existing entry and have at least three letters, thereby expanding on the original functionality. These improvements ensure a more flexible and user-friendly experience. The changes can be tested by opening the [index.html](https://github.com/jthomae1/dselect/blob/main/dist/index.html) in a browser of your choice. 
+
+Additionally, some dependencies in the `package.json` where updated.
 
 ## Contributing
 
