@@ -3,6 +3,8 @@ function dselectUpdate(button, classElement, classToggler) {
   const target = button.closest(`.${classElement}`).previousElementSibling
   const toggler = target.nextElementSibling.getElementsByClassName(classToggler)[0]
   const input = target.nextElementSibling.querySelector('input')
+  const itemsContainer = button.parentNode
+  const noResults = itemsContainer.nextElementSibling
   if (target.multiple) {
     Array.from(target.options).filter(option => option.value === value)[0].selected = true
   } else {
@@ -15,6 +17,7 @@ function dselectUpdate(button, classElement, classToggler) {
   toggler.focus()
   if (input) {
     input.value = ''
+    noResults.classList.add('d-none')
   }
 }
 function dselectRemoveTag(button, classElement, classToggler) {
