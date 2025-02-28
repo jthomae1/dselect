@@ -79,7 +79,7 @@ Options can also be set directly in the HTML using `data-dselect-*` attributes:
 
 ## Changes and Improvements
 
-This fork introduces enhancements to the dropdown functionality, including improved search and creation capabilities. Previously, the dropdown restricted adding new entries if they started with existing item letters, causing limitations for users. The updated logic now allows for any new values to be added unless they exactly match an existing entry and have at least three letters, thereby expanding on the original functionality. These improvements ensure a more flexible and user-friendly experience. The changes can be tested by downloading the repository and opening the [index.html](https://github.com/jthomae1/dselect/blob/main/dist/index.html) in a browser of your choice. 
+This fork introduces enhancements to the dropdown functionality, including improved search and creation capabilities. Previously, the dropdown restricted adding new entries if they started with existing item letters, causing limitations for users. The updated logic now allows for any new values to be added unless they exactly match an existing entry and have at least three letters, thereby expanding on the original functionality. The changes can be tested by downloading the repository and opening the [index.html](https://github.com/jthomae1/dselect/blob/main/dist/index.html) in a browser of your choice. An example has been added to the [index.html](https://github.com/jthomae1/dselect/blob/main/dist/index.html) file that combines the creation and multiple selection.
 
 Additionally, some dependencies in the `package.json` were updated.
 
