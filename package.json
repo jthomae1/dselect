@@ -1,7 +1,7 @@
 {
   "name": "@jthomae1/dselect",
-  "version": "1.1.0",
-  "description": "Dropdown select box for bootstrap 5",
+  "version": "1.1.1",
+  "description": "Dropdown select box for bootstrap 5.3",
   "repository": {
     "type": "git",
     "url": "git+https://jthomae1@github.com/jthomae1/dselect.git"
@@ -19,7 +19,7 @@
   "homepage": "https://github.com/jthomae1/dselect#readme",
   "devDependencies": {
     "autoprefixer": "^10.4.20",
-    "bootstrap": "^5.0.2",
+    "bootstrap": "^5.3.3",
     "esbuild": "^0.25.0",
     "fs-extra": "^11.3.0",
     "gulp": "^5.0.0",
